@@ -17,4 +17,4 @@ elif score_int >= 60:
 else:
     grade = "F"
 
-print(student_name, "earned a", grade)
+print(f"{student_name} earned an {grade}")
