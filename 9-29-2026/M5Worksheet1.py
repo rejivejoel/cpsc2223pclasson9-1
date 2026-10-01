@@ -9,7 +9,7 @@ polling = True
 
 while polling:
     name = input("What is your name? ")
-  if name.lower() == 'done':
+  if name.lowe+
 polling = False
     else:
         subject = input("What is your favorite subject? ")
