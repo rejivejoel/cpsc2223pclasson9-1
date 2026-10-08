@@ -1,3 +1,8 @@
+# Name: Joel Rejive
+# Student ID: 883464604
+# Section: CPSC 223P-07
+# Assignment: Module 6 Lecture Assignment 2
+
 def get_fav_food():
     foods_dict = {}
     fav_food = ""
