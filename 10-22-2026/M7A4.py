@@ -4,22 +4,16 @@
 # Assignment: Module 7 Assignment 4
 
 
-# M7A4.py
-
 class NumCouple:
     def __init__(self, num1, num2):
         self.num1 = num1
         self.num2 = num2
 
     def minimum(self):
-        if self.num1 < self.num2:
-            return self.num1
-        return self.num2
+        return min(self.num1, self.num2)
 
     def maximum(self):
-        if self.num1 > self.num2:
-            return self.num1
-        return self.num2
+        return max(self.num1, self.num2)
 
     def product(self):
         return self.num1 * self.num2
@@ -31,30 +25,22 @@ class NumThruple(NumCouple):
         self.num3 = num3
 
     def minimum(self):
-        if self.num1 < self.num2 and self.num1 < self.num3:
-            return self.num1
-        elif self.num2 < self.num3:
-            return self.num2
-        return self.num3
+        return min(NumCouple.minimum(self), self.num3)
 
     def maximum(self):
-        if self.num1 > self.num2 and self.num1 > self.num3:
-            return self.num1
-        elif self.num2 > self.num3:
-            return self.num2
-        return self.num3
+        return max(NumCouple.maximum(self), self.num3)
 
     def product(self):
-        return self.num1 * self.num2 * self.num3
+        return NumCouple.product(self) * self.num3
+
 
 # hard-coded calls
-# hard-coded lines
 couple = NumCouple(4, 7)
 print(f"The couples minimum is {couple.minimum()}")
 print(f"The couples maximum is {couple.maximum()}")
 print(f"The couples product is {couple.product()}")
+
 thruple = NumThruple(3, 5, 2)
 print(f"The thruples minimum is {thruple.minimum()}")
 print(f"The thruples maximum is {thruple.maximum()}")
 print(f"The thruples product is {thruple.product()}")
-

@@ -4,17 +4,17 @@
 # Assignment: Module 3 Assignment 6
 
 student_name = input("What is the student name? ")
-score_int = int(input("What is their score? "))
+score = int(input("What is their score? "))
 
-if score_int >= 90:
+if score >= 90:
     grade = "A"
-elif score_int >= 80:
+elif score >= 80:
     grade = "B"
-elif score_int >= 70:
+elif score >= 70:
     grade = "C"
-elif score_int >= 60:
+elif score >= 60:
     grade = "D"
 else:
     grade = "F"
 
-print(f"{student_name} earned an {grade}")
+print(f"{student_name} earned an {grade}" if grade == "A" else f"{student_name} earned a {grade}")
