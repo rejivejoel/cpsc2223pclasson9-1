@@ -1,7 +1,7 @@
 
 total = 0
 
-file = open("code.txt", "r")
+file = open("codes.txt", "r")
 
 for line in file:
     batteries = line.strip()
