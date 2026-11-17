@@ -1,25 +1,22 @@
 
 total = 0
 
-file = open("codes.txt", "r")
-data = file.read().strip()
+file = open("code.txt", "r")
+
+for line in file:
+    batteries = line.strip()
+
+    largest = 0
+
+    for i in range(len(batteries)):
+        for j in range(i + 1, len(batteries)):
+            joltage = int(batteries[i] + batteries[j])
+
+            if joltage > largest:
+                largest = joltage
+
+    total += largest
+
 file.close()
-
-ranges = data.split(",")
-
-for item in ranges:
-    start, end = item.split("-")
-
-    for number in range(int(start), int(end) + 1):
-        number = str(number)
-
-        if len(number) % 2 == 0:
-            middle = len(number) // 2
-
-            first = number[:middle]
-            second = number[middle:]
-
-            if first == second:
-                total += int(number)
 
 print("Total:", total)
